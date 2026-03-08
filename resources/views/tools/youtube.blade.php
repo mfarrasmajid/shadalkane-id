@@ -29,11 +29,9 @@
     }
 
     .video-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         overflow: hidden;
     }
 
@@ -53,10 +51,11 @@
         font-weight: 700;
         margin-bottom: 8px;
         line-height: 1.4;
+        color: var(--dark);
     }
 
     .video-info .author {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--gray-500);
         font-size: 0.9rem;
         margin-bottom: 20px;
         display: flex;
@@ -71,13 +70,13 @@
     }
 
     .format-btn {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        color: #fff;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        color: var(--gray-700);
         padding: 14px 16px;
-        border-radius: 12px;
+        border-radius: 10px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         font-family: 'Inter', sans-serif;
         display: flex;
         align-items: center;
@@ -87,9 +86,10 @@
     }
 
     .format-btn:hover {
-        background: rgba(220, 38, 38, 0.3);
-        border-color: rgba(220, 38, 38, 0.5);
-        transform: translateY(-2px);
+        background: var(--dark);
+        border-color: var(--dark);
+        color: var(--white);
+        transform: translateY(-1px);
     }
 
     .format-btn .quality {
@@ -98,7 +98,7 @@
 
     .format-btn .dl-icon {
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
 
     .format-btn:hover .dl-icon {
@@ -123,16 +123,16 @@
 
     .loading-state p {
         margin-top: 16px;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--gray-500);
     }
 
     .error-message {
         display: none;
-        background: rgba(220, 38, 38, 0.3);
-        border: 1px solid rgba(220, 38, 38, 0.5);
-        color: #FCA5A5;
+        background: #FEF2F2;
+        border: 1px solid #FECACA;
+        color: #991B1B;
         padding: 16px;
-        border-radius: 12px;
+        border-radius: 10px;
         margin-bottom: 20px;
         text-align: center;
     }
@@ -142,10 +142,9 @@
     }
 
     .instructions {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 12px;
         padding: 24px;
         margin-top: 24px;
     }
@@ -153,11 +152,11 @@
     .instructions h4 {
         font-size: 1rem;
         margin-bottom: 12px;
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--dark);
     }
 
     .instructions ol {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--gray-500);
         font-size: 0.9rem;
         line-height: 1.8;
         padding-left: 20px;

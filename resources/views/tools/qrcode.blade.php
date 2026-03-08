@@ -10,11 +10,9 @@
     }
 
     .qr-form-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         padding: 32px;
         margin-bottom: 24px;
     }
@@ -36,21 +34,20 @@
     }
 
     .qr-result-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         padding: 40px;
     }
 
     .qr-image-wrapper {
-        background: #fff;
-        border-radius: 16px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 12px;
         padding: 24px;
         display: inline-block;
         margin-bottom: 24px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .qr-image-wrapper img {
@@ -59,7 +56,7 @@
     }
 
     .qr-content-text {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--gray-500);
         font-size: 0.85rem;
         margin-bottom: 20px;
         word-break: break-all;
@@ -81,15 +78,15 @@
     .color-input-wrapper input[type="color"] {
         width: 48px;
         height: 48px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
+        border: 2px solid var(--gray-300);
+        border-radius: 10px;
         cursor: pointer;
         background: transparent;
         padding: 4px;
     }
 
     .color-label {
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--gray-500);
         font-size: 0.9rem;
     }
 
@@ -101,21 +98,21 @@
 
     .size-option {
         padding: 8px 16px;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.05);
-        color: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        border: 1px solid var(--gray-300);
+        background: var(--white);
+        color: var(--gray-500);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         font-family: 'Inter', sans-serif;
         font-size: 0.85rem;
         font-weight: 500;
     }
 
     .size-option:hover, .size-option.active {
-        background: rgba(124, 58, 237, 0.4);
-        border-color: rgba(124, 58, 237, 0.6);
-        color: #fff;
+        background: var(--dark);
+        border-color: var(--dark);
+        color: var(--white);
     }
 
     .loading-overlay {
@@ -176,7 +173,7 @@
 
     <div class="loading-overlay" id="loadingOverlay">
         <div class="spinner" style="width: 40px; height: 40px; border-width: 3px;"></div>
-        <p style="margin-top: 16px; color: rgba(255, 255, 255, 0.6);">Generating QR Code...</p>
+        <p style="margin-top: 16px; color: var(--gray-500);">Generating QR Code...</p>
     </div>
 
     <div class="qr-result" id="qrResult">

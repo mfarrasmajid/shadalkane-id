@@ -13,11 +13,9 @@
 
     /* Sidebar / Toolbar */
     .editor-sidebar {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         padding: 20px;
         overflow-y: auto;
         max-height: calc(100vh - 120px);
@@ -32,7 +30,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--gray-400);
         margin-bottom: 12px;
     }
 
@@ -44,12 +42,12 @@
 
     .tool-btn {
         padding: 10px 8px;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.05);
-        color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        border: 1px solid var(--gray-200);
+        background: var(--gray-50);
+        color: var(--gray-700);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         font-family: 'Inter', sans-serif;
         font-size: 0.8rem;
         font-weight: 500;
@@ -64,15 +62,15 @@
     }
 
     .tool-btn:hover {
-        background: rgba(220, 38, 38, 0.2);
-        border-color: rgba(220, 38, 38, 0.4);
-        color: #fff;
+        background: var(--gray-100);
+        border-color: var(--gray-300);
+        color: var(--dark);
     }
 
     .tool-btn.active {
-        background: rgba(220, 38, 38, 0.4);
-        border-color: rgba(220, 38, 38, 0.6);
-        color: #fff;
+        background: var(--dark);
+        border-color: var(--dark);
+        color: var(--white);
     }
 
     /* Slider controls */
@@ -89,13 +87,13 @@
 
     .slider-label {
         font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--gray-700);
         font-weight: 500;
     }
 
     .slider-value {
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--gray-400);
         font-weight: 600;
     }
 
@@ -104,7 +102,7 @@
         height: 6px;
         -webkit-appearance: none;
         appearance: none;
-        background: rgba(255, 255, 255, 0.15);
+        background: var(--gray-200);
         border-radius: 3px;
         outline: none;
     }
@@ -114,19 +112,17 @@
         width: 18px;
         height: 18px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #DC2626, #7C3AED);
+        background: var(--dark);
         cursor: pointer;
-        border: 2px solid #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        border: 2px solid var(--white);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     /* Canvas area */
     .editor-main {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -137,7 +133,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 12px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid var(--gray-200);
         flex-wrap: wrap;
         gap: 8px;
     }
@@ -157,10 +153,10 @@
         position: relative;
         overflow: auto;
         background:
-            linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-            linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-            linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-            linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+            linear-gradient(45deg, var(--gray-100) 25%, transparent 25%),
+            linear-gradient(-45deg, var(--gray-100) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, var(--gray-100) 75%),
+            linear-gradient(-45deg, transparent 75%, var(--gray-100) 75%);
         background-size: 20px 20px;
         background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
     }
@@ -169,7 +165,7 @@
         max-width: 100%;
         max-height: 100%;
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         cursor: crosshair;
     }
 
@@ -181,35 +177,35 @@
         justify-content: center;
         min-height: 400px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
 
     .upload-area:hover {
-        background: rgba(255, 255, 255, 0.03);
+        background: var(--gray-50);
     }
 
     .upload-icon {
         width: 100px;
         height: 100px;
-        border-radius: 24px;
-        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        background: var(--gray-50);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2.5rem;
-        color: rgba(255, 255, 255, 0.3);
+        color: var(--gray-300);
         margin-bottom: 20px;
-        border: 2px dashed rgba(255, 255, 255, 0.15);
+        border: 2px dashed var(--gray-300);
     }
 
     .upload-area h3 {
         font-size: 1.2rem;
         margin-bottom: 8px;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--gray-700);
     }
 
     .upload-area p {
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--gray-400);
         font-size: 0.9rem;
     }
 
@@ -244,8 +240,8 @@
     .modal-overlay {
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
         z-index: 2000;
         display: none;
         align-items: center;
@@ -257,19 +253,20 @@
     }
 
     .modal-card {
-        background: rgba(30, 30, 30, 0.95);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         padding: 32px;
         width: 100%;
         max-width: 400px;
         margin: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .modal-card h3 {
         font-size: 1.2rem;
         margin-bottom: 20px;
+        color: var(--dark);
     }
 
     .modal-actions {
@@ -284,7 +281,7 @@
 
     .image-info {
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--gray-500);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -430,7 +427,7 @@
                     <i class="fas fa-eraser"></i> Remove Background
                 </button>
             </div>
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 8px;">
+            <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 8px;">
                 Menggunakan tolerance-based removal (klik area yang ingin dihapus)
             </p>
         </div>
@@ -462,7 +459,7 @@
                 </div>
                 <h3>Upload Gambar</h3>
                 <p>Klik untuk memilih atau drag & drop gambar</p>
-                <p style="margin-top: 8px; font-size: 0.8rem; color: rgba(255,255,255,0.3);">JPEG, PNG, GIF, WebP - Max 10MB</p>
+                <p style="margin-top: 8px; font-size: 0.8rem; color: var(--gray-400);">JPEG, PNG, GIF, WebP - Max 10MB</p>
             </div>
         </div>
 
@@ -489,7 +486,7 @@
             <input type="number" id="resizeHeight" class="form-input" min="1" max="10000">
         </div>
         <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
-            <input type="checkbox" id="lockAspect" checked style="accent-color: #DC2626;">
+            <input type="checkbox" id="lockAspect" checked style="accent-color: #1A1A1A;">
             <label for="lockAspect" class="form-label" style="margin: 0;">Lock Aspect Ratio</label>
         </div>
 
@@ -513,7 +510,7 @@ let isRemovingBg = false;
 
 // Drag and drop
 const uploadArea = document.getElementById('uploadArea');
-uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.style.background = 'rgba(255,255,255,0.08)'; });
+uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.style.background = '#F3F4F6'; });
 uploadArea.addEventListener('dragleave', () => { uploadArea.style.background = ''; });
 uploadArea.addEventListener('drop', (e) => {
     e.preventDefault();

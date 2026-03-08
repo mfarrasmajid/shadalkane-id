@@ -13,14 +13,11 @@
         font-size: 2.5rem;
         font-weight: 800;
         margin-bottom: 12px;
-        background: linear-gradient(135deg, #fff, #FCA5A5, #FDBA74);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--dark);
     }
 
     .welcome-section p {
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--gray-500);
         font-size: 1.1rem;
         max-width: 500px;
         margin: 0 auto;
@@ -34,15 +31,13 @@
     }
 
     .tool-card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
         padding: 32px;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition: all 0.2s ease;
         text-decoration: none;
-        color: #fff;
+        color: var(--gray-700);
         display: block;
         position: relative;
         overflow: hidden;
@@ -55,54 +50,37 @@
         left: 0;
         right: 0;
         height: 3px;
-        border-radius: 20px 20px 0 0;
+        background: var(--dark);
     }
 
-    .tool-card.youtube::before { background: linear-gradient(90deg, #DC2626, #EF4444); }
-    .tool-card.qrcode::before { background: linear-gradient(90deg, #7C3AED, #8B5CF6); }
-    .tool-card.image::before { background: linear-gradient(90deg, #EA580C, #F97316); }
-
     .tool-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        background: rgba(255, 255, 255, 0.14);
-        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        border-color: var(--gray-300);
     }
 
     .tool-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 16px;
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-bottom: 20px;
-    }
-
-    .tool-card.youtube .tool-icon {
-        background: linear-gradient(135deg, rgba(220, 38, 38, 0.3), rgba(239, 68, 68, 0.1));
-        color: #FCA5A5;
-    }
-
-    .tool-card.qrcode .tool-icon {
-        background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(139, 92, 246, 0.1));
-        color: #C4B5FD;
-    }
-
-    .tool-card.image .tool-icon {
-        background: linear-gradient(135deg, rgba(234, 88, 12, 0.3), rgba(249, 115, 22, 0.1));
-        color: #FDBA74;
+        background: var(--gray-100);
+        color: var(--dark);
     }
 
     .tool-card h3 {
         font-size: 1.3rem;
         font-weight: 700;
         margin-bottom: 8px;
+        color: var(--dark);
     }
 
     .tool-card p {
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--gray-500);
         font-size: 0.9rem;
         line-height: 1.6;
         margin-bottom: 20px;
@@ -112,20 +90,19 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--dark);
         font-weight: 600;
         font-size: 0.9rem;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
 
     .tool-card:hover .tool-link {
-        color: #fff;
         gap: 10px;
     }
 
     .user-greeting {
         font-size: 1rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--gray-400);
         margin-bottom: 4px;
     }
 
