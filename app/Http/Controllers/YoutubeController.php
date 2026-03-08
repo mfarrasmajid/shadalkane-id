@@ -28,33 +28,36 @@ class YoutubeController extends Controller
             2 => ['pipe', 'w'],
         ];
 
-        // Build environment with all critical Windows system paths to avoid WinError 10106.
-        // The error occurs because Python's asyncio needs Winsock, which requires
-        // System32 in PATH plus SystemRoot, SystemDrive, and ComSpec set properly.
-        $systemRoot = getenv('SYSTEMROOT') ?: 'C:\\Windows';
-        $system32 = $systemRoot . '\\System32';
-        $ytdlpDir = dirname($this->ytdlpPath());
+        // On Windows, we must pass a custom env with System32 in PATH to avoid
+        // WinError 10106 (Python asyncio needs Winsock). On Linux, inherit the
+        // system environment as-is to avoid stripping essential vars.
+        $env = null;
+        if (PHP_OS_FAMILY === 'Windows') {
+            $systemRoot = getenv('SYSTEMROOT') ?: 'C:\\Windows';
+            $system32 = $systemRoot . '\\System32';
+            $ytdlpDir = dirname($this->ytdlpPath());
 
-        $env = [
-            'SYSTEMROOT' => $systemRoot,
-            'SystemDrive' => getenv('SystemDrive') ?: 'C:',
-            'ComSpec' => $system32 . '\\cmd.exe',
-            'PATH' => implode(';', array_filter([
-                $ffmpegDir,
-                $ytdlpDir,
-                $system32,
-                $systemRoot,
-                $system32 . '\\Wbem',
-                getenv('PATH') ?: '',
-            ])),
-            'TEMP' => getenv('TEMP') ?: sys_get_temp_dir(),
-            'TMP' => getenv('TMP') ?: sys_get_temp_dir(),
-            'APPDATA' => getenv('APPDATA') ?: '',
-            'LOCALAPPDATA' => getenv('LOCALAPPDATA') ?: '',
-            'USERPROFILE' => getenv('USERPROFILE') ?: '',
-            'HOMEDRIVE' => getenv('HOMEDRIVE') ?: 'C:',
-            'HOMEPATH' => getenv('HOMEPATH') ?: '\\',
-        ];
+            $env = [
+                'SYSTEMROOT' => $systemRoot,
+                'SystemDrive' => getenv('SystemDrive') ?: 'C:',
+                'ComSpec' => $system32 . '\\cmd.exe',
+                'PATH' => implode(';', array_filter([
+                    $ffmpegDir,
+                    $ytdlpDir,
+                    $system32,
+                    $systemRoot,
+                    $system32 . '\\Wbem',
+                    getenv('PATH') ?: '',
+                ])),
+                'TEMP' => getenv('TEMP') ?: sys_get_temp_dir(),
+                'TMP' => getenv('TMP') ?: sys_get_temp_dir(),
+                'APPDATA' => getenv('APPDATA') ?: '',
+                'LOCALAPPDATA' => getenv('LOCALAPPDATA') ?: '',
+                'USERPROFILE' => getenv('USERPROFILE') ?: '',
+                'HOMEDRIVE' => getenv('HOMEDRIVE') ?: 'C:',
+                'HOMEPATH' => getenv('HOMEPATH') ?: '\\',
+            ];
+        }
 
         $process = proc_open($cmd, $descriptors, $pipes, null, $env);
         if (!is_resource($process)) {
