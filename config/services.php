@@ -37,8 +37,6 @@ return [
 
     'ytdlp' => [
         'path' => env('YTDLP_PATH', 'yt-dlp'),
-        'cookies_from_browser' => env('YTDLP_COOKIES_FROM_BROWSER', ''),
-        'cookies_file' => env('YTDLP_COOKIES_FILE', ''),
     ],
 
     'ffmpeg' => [
