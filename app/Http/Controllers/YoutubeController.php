@@ -20,9 +20,10 @@ class YoutubeController extends Controller
     {
         $ffmpeg = $this->ffmpegPath();
         $ffmpegDir = dirname($ffmpeg);
-        $cmd = escapeshellarg($this->ytdlpPath()) . ' --ffmpeg-location ' . escapeshellarg($ffmpegDir);
+        $cmd = escapeshellarg($this->ytdlpPath()) . ' --ffmpeg-location ' . escapeshellarg($ffmpegDir)
+            . ' --extractor-args ' . escapeshellarg('youtube:player_client=mediaconnect');
 
-        // Add cookie authentication to avoid YouTube bot detection
+        // Add cookie authentication to avoid YouTube bot detection (optional fallback)
         $cookiesBrowser = config('services.ytdlp.cookies_from_browser', '');
         $cookiesFile = config('services.ytdlp.cookies_file', '');
         if ($cookiesBrowser) {
